@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products Range Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50">
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
+        <div className="max-w-7xl px-4 py-8">
+          {/* Heading */}
+          <h2 className="text-center text-3xl font-bold mb-6">
+            Products <span className="text-green-500">Range</span>
+          </h2>
+          <p className="text-center text-gray-500 mb-8">
+            We specialize in wholesale of Mobile Phones, Tablets, Smart Watches & similar relatable products.
+          </p>
+  
+          {/* Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Left Card */}
+            <div className="flex flex-col gap-4">
+              <div className="bg-white rounded-lg shadow-md p-4 flex items-center justify-center">
+                <img src="https://via.placeholder.com/150" alt="Left Top" />
+              </div>
+              <div className="bg-white rounded-lg shadow-md p-4 flex items-center justify-center">
+                <img src="https://via.placeholder.com/150" alt="Left Bottom" />
+              </div>
+            </div>
+  
+            {/* Center Large Image */}
+            <div className="bg-white rounded-lg shadow-md p-4 flex items-center justify-center">
+              <img
+                src="https://via.placeholder.com/300x400"
+                alt="Center Large"
+                className="rounded-md"
+              />
+            </div>
+  
+            {/* Right Card */}
+            <div className="flex flex-col gap-4">
+              <div className="bg-white rounded-lg shadow-md p-4 flex items-center justify-center">
+                <img src="https://via.placeholder.com/150" alt="Right Top" />
+              </div>
+              <div className="bg-white rounded-lg shadow-md p-4 flex items-center justify-center">
+                <img src="https://via.placeholder.com/150" alt="Right Bottom" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
