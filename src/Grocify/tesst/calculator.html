@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beautiful Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .button:hover {
+      transform: scale(1.1);
+      transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    }
+
+    .button:active {
+      transform: scale(0.95);
+    }
+
+    .display {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-black via-red-800 to-black flex items-center justify-center h-screen">
+  <div class="bg-black p-8 rounded-xl shadow-2xl w-96">
+    <div id="display" class="display bg-gray-100 text-right text-3xl font-mono p-5 rounded-lg mb-6 overflow-auto shadow-inner">0</div>
+    <div class="grid grid-cols-4 gap-4">
+      <button class="button bg-red-800 text-white py-3 rounded-full border-2 border-red-800 shadow-lg hover:bg-red-800" onclick="clearDisplay()">C</button>
+      <button class="button bg-red-800 text-white py-3 rounded-full border-2 border-red-800 shadow-lg hover:bg-red-800" onclick="appendValue('(')">(</button>
+      <button class="button bg-red-800 text-white py-3 rounded-full border-2 border-red-800 shadow-lg hover:bg-red-800" onclick="appendValue(')')">)</button>
+      <button class="button bg-red-800 text-white py-3 rounded-full border-2 border-red-800 shadow-lg hover:bg-red-800" onclick="appendValue('/')">/</button>
+
+      <button class="button bg-gray-200 py-3 rounded-full border-2 border-gray-400 shadow-lg hover:bg-gray-300" onclick="appendValue('7')">7</button>
+      <button class="button bg-gray-200 py-3 rounded-full border-2 border-gray-400 shadow-lg hover:bg-gray-300" onclick="appendValue('8')">8</button>
+      <button class="button bg-gray-200 py-3 rounded-full border-2 border-gray-400 shadow-lg hover:bg-gray-300" onclick="appendValue('9')">9</button>
+      <button class="button bg-red-800 text-white py-3 rounded-full border-2 border-red-800 shadow-lg hover:bg-red-800" onclick="appendValue('*')">*</button>
+
+      <button class="button bg-gray-200 py-3 rounded-full border-2 border-gray-400 shadow-lg hover:bg-gray-300" onclick="appendValue('4')">4</button>
+      <button class="button bg-gray-200 py-3 rounded-full border-2 border-gray-400 shadow-lg hover:bg-gray-300" onclick="appendValue('5')">5</button>
+      <button class="button bg-gray-200 py-3 rounded-full border-2 border-gray-400 shadow-lg hover:bg-gray-300" onclick="appendValue('6')">6</button>
+      <button class="button bg-red-800 text-white py-3 rounded-full border-2 border-red-800 shadow-lg hover:bg-red-800" onclick="appendValue('-')">-</button>
+
+      <button class="button bg-gray-200 py-3 rounded-full border-2 border-gray-400 shadow-lg hover:bg-gray-300" onclick="appendValue('1')">1</button>
+      <button class="button bg-gray-200 py-3 rounded-full border-2 border-gray-400 shadow-lg hover:bg-gray-300" onclick="appendValue('2')">2</button>
+      <button class="button bg-gray-200 py-3 rounded-full border-2 border-gray-400 shadow-lg hover:bg-gray-300" onclick="appendValue('3')">3</button>
+      <button class="button bg-red-800 text-white py-3 rounded-full border-2 border-red-800 shadow-lg hover:bg-red-800" onclick="appendValue('+')">+</button>
+
+      <button class="col-span-2 button bg-gray-200 py-3 rounded-full border-2 border-gray-400 shadow-lg hover:bg-gray-300" onclick="appendValue('0')">0</button>
+      <button class="button bg-gray-200 py-3 rounded-full border-2 border-gray-400 shadow-lg hover:bg-gray-300" onclick="appendValue('.')">.</button>
+      <button class="button bg-red-800 text-white py-3 rounded-full border-2 border-red-800 shadow-lg hover:bg-red-800" onclick="calculateResult()">=</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+
+    function appendValue(value) {
+      if (display.innerText === '0') {
+        display.innerText = value;
+      } else {
+        display.innerText += value;
+      }
+    }
+
+    function clearDisplay() {
+      display.innerText = '0';
+    }
+
+    function calculateResult() {
+      try {
+        display.innerText = eval(display.innerText);
+      } catch {
+        display.innerText = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>
