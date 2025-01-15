@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Clip Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom clip-path */
+        .clip-path-custom {
+            clip-path: path("M0.5 42.5685C0.5 35.9661 6.13816 30.5711 13.1472 30.5711H83.4308C87.9493 30.5711 92.1831 28.4403 94.7263 24.8681L108.314 5.78297C110.662 2.48499 114.586 0.5 118.795 0.5H356.853C363.862 0.5 369.5 5.89499 369.5 12.4974V219.36C369.5 225.963 363.862 231.358 356.853 231.358H307.668C303.149 231.358 298.916 233.489 296.372 237.061L261.376 286.217C259.028 289.515 255.104 291.5 250.895 291.5H13.1472C6.13816 291.5 0.5 286.105 0.5 279.503V42.5685Z");
+            -webkit-clip-path: path("M0.5 42.5685C0.5 35.9661 6.13816 30.5711 13.1472 30.5711H83.4308C87.9493 30.5711 92.1831 28.4403 94.7263 24.8681L108.314 5.78297C110.662 2.48499 114.586 0.5 118.795 0.5H356.853C363.862 0.5 369.5 5.89499 369.5 12.4974V219.36C369.5 225.963 363.862 231.358 356.853 231.358H307.668C303.149 231.358 298.916 233.489 296.372 237.061L261.376 286.217C259.028 289.515 255.104 291.5 250.895 291.5H13.1472C6.13816 291.5 0.5 286.105 0.5 279.503V42.5685Z");
+        }
+    </style>
+</head>
+
+<body class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div
+        class="clip-path-custom bg-gradient-to-r from-[#AAC433] to-[#005396] w-[370px] h-[292px] flex justify-center items-center text-lg font-bold text-gray-900 text-center">
+    </div>
+</body>
+
+</html>
